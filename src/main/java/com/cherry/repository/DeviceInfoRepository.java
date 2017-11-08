@@ -26,6 +26,7 @@ public interface DeviceInfoRepository extends JpaRepository<DeviceInfo,String>{
 //    @Query("select * from device_info WHERE device_owner=:deviceOwner ORDER BY sn_code DESC ")
 //    DeviceInfo findByDeviceOwnerOrderBySnCodeDesc(@Param("deviceOwner") String deviceOwner);
 
+
     //查询的是最后一条
     @Transactional
     @Query(value = "select * from device_info where device_info.device_owner = ?1 order by device_info.sn_code desc limit 1",nativeQuery = true)
